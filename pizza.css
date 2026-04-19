@@ -1,0 +1,13 @@
+h2{
+        background-color: rgb(122, 81, 81);
+        color: lightgoldenrodyellow;
+    }
+#pizza{
+    text-align:center;
+    font-family:'Courier New', Courier, monospace;
+    background-color:rgba(171, 9, 9, 0.498);
+    color: rgb(46, 4, 46);
+    font-size: larger;
+    font-weight: 900;
+     
+}
