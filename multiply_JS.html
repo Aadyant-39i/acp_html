@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Scope</title>
+
+    <style>
+
+        body{
+            background-color: black;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1{
+            color: lime;
+        }
+
+        button{
+            background-color: aqua;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        p{
+            font-size: 22px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Function Declaration</h1>
+
+    <button type="button" onclick="myFunction()">
+        What is the answer?
+    </button>
+
+    <p style="color: yellowgreen;" id="demo"></p>
+
+    <p style="color: aqua;" id="demo1"></p>
+
+    <p id="demo2" style="color: orange;"></p>
+
+
+    <script>
+
+        function myFunction(){
+            document.getElementById("demo").innerHTML =
+            "The answer is 40";
+        }
+
+        var result = function (a, b) {
+            return a * b;
+        }
+
+        document.getElementById("demo1").innerHTML =
+        "5 × 8 = " + result(5, 8);
+
+        document.getElementById("demo2").innerHTML =
+        "JavaScript Function Example";
+
+    </script>
+
+</body>
+</html>
