@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h1>Fruit Manager</h1>
+
+<input id="fruit" placeholder="Enter fruit">
+<button onclick="addFruit()">Add</button>
+<button onclick="clearFruits()">Clear</button>
+
+<p id="list"></p>
+
+<script>
+var fruits = ["Apple", "Mango", "Grapes"];
+
+document.getElementById("list").innerHTML = fruits;
+
+function addFruit() {
+    var item = document.getElementById("fruit").value;
+
+    fruits.push(item);
+
+    document.getElementById("list").innerHTML = fruits;
+
+    document.getElementById("fruit").value = "";
+}
+
+function clearFruits() {
+    fruits = [];
+
+    document.getElementById("list").innerHTML = "No fruits";
+}
+ var str = "enter The fruit name above";
+            document.write(str.toUpperCase() + "<br>");
+            document.write(str.toLowerCase() + "<br>");
+           
+            
+            var str1 = "Hello World!";
+            var patt = new RegExp("Hello"); 
+           
+            document.write(res);
+</script>
+
+</body>
+</html>
