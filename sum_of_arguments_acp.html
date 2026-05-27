@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food Bill Generator</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        .box{
+            background-color: white;
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+
+        button{
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        h1{
+            color: darkblue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Food Bill Generator</h1>
+
+<p id="person"></p>
+
+<button onclick="showBill()">Generate Bill</button>
+
+<h3 id="items"></h3>
+
+<h3 id="largest"></h3>
+
+<h3 id="smallest"></h3>
+
+<h2 id="total"></h2>
+
+</div>
+
+<script>
+
+var person = {
+    firstName: "Aadyant",
+    age: 12,
+};
+
+document.getElementById("person").innerHTML =
+"Customer Name: " + person.firstName;
+
+function findSum() {
+
+    var i;
+    var sum = 0;
+
+    for(i = 0; i < arguments.length; i++) {
+        sum = sum + arguments[i];
+    }
+
+    return sum;
+}
+
+function findMax() {
+
+    var i;
+    var max = 0;
+
+    for(i = 0; i < arguments.length; i++) {
+
+        if(arguments[i] > max) {
+            max = arguments[i];
+        }
+
+    }
+
+    return max;
+}
+
+function findMin() {
+
+    var i;
+    var min = arguments[0];
+
+    for(i = 0; i < arguments.length; i++) {
+
+        if(arguments[i] < min) {
+            min = arguments[i];
+        }
+
+    }
+
+    return min;
+}
+
+function showBill() {
+
+    var burger = 120;
+    var pizza = 250;
+    var fries = 90;
+    var drink = 60;
+
+    document.getElementById("items").innerHTML =
+    "Burger = ₹120 <br> Pizza = ₹250 <br> Fries = ₹90 <br> Drink = ₹60";
+
+    document.getElementById("largest").innerHTML =
+    "Highest Price = ₹" + findMax(burger, pizza, fries, drink);
+
+    document.getElementById("smallest").innerHTML =
+    "Lowest Price = ₹" + findMin(burger, pizza, fries, drink);
+
+    document.getElementById("total").innerHTML =
+    "Total Bill = ₹" + findSum(burger, pizza, fries, drink);
+
+}
+
+</script>
+
+</body>
+
+</html>
