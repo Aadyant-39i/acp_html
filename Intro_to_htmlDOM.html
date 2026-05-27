@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Cars</title>
+
+    <style>
+
+        body{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #000000;
+            text-align: center;
+        }
+
+        .box{
+            background-color: rgb(20, 20, 96);
+            box-shadow: 0px 0px 15px rgb(190, 16, 16);
+            margin: auto;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 15px;
+            
+        }
+
+        h1{
+            color: darkred;
+        }
+
+        h2{
+            color: darkblue;
+        }
+
+        .section{
+            background-color: #2ce4d8;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgb(42, 220, 75);
+        }
+
+        button{
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1 id="one">Cars</h1>
+
+    <p style="color: aliceblue;">Choose your favourite car.</p>
+
+    <div class="section">
+
+        <h2 id="two">Lamborghini Huracan</h2>
+
+        <p>
+           <img src="https://st2.depositphotos.com/2924751/8580/i/450/depositphotos_85804196-stock-photo-lamborghini-huracan-green-luxury-sports.jpg" width="150px" style = "border-radius: 10px;">
+           <br>
+           <p>A track-ready, V10-powered masterpiece of Italian speed and style.</p>
+
+        </p>
+
+        <button onclick="showLamborghini()">Top Speed</button>
+
+    </div>
+
+    <div class="section">
+
+        <h2 id="three">Bugatti Divo</h2>
+
+        <p>
+            <img src="https://autodesignmagazine.com/wp-content/uploads/2018/08/2018082601_bugatti_divo.jpg" width="150px" style = "border-radius: 10px;">
+            <br>
+            A $5.8 million, 1,500-horsepower weapon built entirely to dominate corners.
+        </p>
+
+        <button onclick="showBugatti()" >Top Speed</button>
+
+    </div>
+
+    <div class="section">
+
+        <h2 id="four">Porsche 911</h2>
+
+        <p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3LjgsgRxxn77HKapcyp5Krqgyqa2x3CHudA&s" width="150px" style = "border-radius: 10px;">
+            <br>
+            A legendary sports car with a rich history and exceptional performance.
+        </p>
+
+        <button onclick="showPorsche()" >Top Speed</button>
+
+    </div>
+
+    <div class="section">
+
+        <h2 id="five">Rimac Nevera</h2>
+
+        <p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQg4eb9Ttq3ptSpJjeBNVsRAo2d9_COkp-cQ&s" width="150px" style = "border-radius: 10px;"><br>
+            An all-electric, 1,914-horsepower hypercar that shatters records and redefines acceleration.
+
+        </p>
+
+        <button onclick="showRimac()" >Top Speed</button>
+
+    </div>
+
+</div>
+
+<script>
+
+    var title = document.getElementById("one").innerHTML;
+
+    alert("Welcome to " + title);
+
+    function showLamborghini(){
+
+        var text = document.getElementById("two").innerHTML;
+
+        alert(text + " Top Speed: 325 km/h");
+
+    }
+
+    function showBugatti(){
+
+        var text = document.getElementById("three").innerHTML;
+
+        alert(text + " Top Speed: 380 km/h");
+
+    }
+
+    function showPorsche(){
+
+        var text = document.getElementById("four").innerHTML;
+
+        alert(text + " Top Speed: 330 km/h");
+
+    }
+
+    function showRimac(){
+
+        var text = document.getElementById("five").innerHTML;
+
+        alert(text + " Top Speed: 412 km/h");
+
+    }
+
+</script>
+</body>
+
+</html>
