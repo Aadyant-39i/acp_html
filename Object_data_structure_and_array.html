@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Sports Car Showroom</title>
+
+    <style>
+
+        body{
+            background-color: #101820;
+            font-family: Arial;
+            text-align: center;
+            color: white;
+        }
+
+        .box{
+            background-color: #1e2a38;
+       
+            margin: auto;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        h1{
+            color: gold;
+        }
+
+        button{
+            background-color: crimson;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        p{
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Sports Car Showroom</h1>
+
+<p id="carslist"></p>
+
+<button onclick="removeCar()">Remove Last Car</button>
+
+<button onclick="showAverage()">Show Average Speed</button>
+
+<p id="removed"></p>
+
+<p id="average"></p>
+
+<p id="bestcar"></p>
+
+</div>
+
+<script>
+
+var cars = [
+    "Lamborghini Aventador",
+    "Ferrari sf90 Stradale",
+    "Koenigsegg Jesko Absolut",
+    "Bugatti Chiron ",
+    "Devel Sixteen",
+    "Hennessey Venom F5"
+];
+
+document.getElementById("carslist").innerHTML =
+"<b>Available Cars:</b><br><br>" + cars.join("<br>");
+
+function removeCar() {
+
+    cars.pop();
+
+    document.getElementById("removed").innerHTML =
+    "<b>Cars Remaining:</b><br><br>" + cars.join("<br>");
+}
+
+function add(a, b, c, d, e, f) {
+
+    return a + b + c + d + e + f;
+}
+
+function average(a, b, c, d, e, f) {
+
+    return add(a, b, c, d, e, f) / 6;
+}
+
+function showAverage() {
+
+    var result = average(350, 340, 530, 490, 580, 530);
+
+    document.getElementById("average").innerHTML =
+    "<b>Average Speed:</b> " + result + " km/h";
+}
+
+var words = [
+    "Fast",
+    "Luxury",
+    "Power"
+];
+
+document.getElementById("bestcar").innerHTML =
+"<b>Showroom Theme:</b> " + words[0];
+
+</script>
+
+</body>
+
+</html>
