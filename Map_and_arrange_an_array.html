@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>🍦 Ice Cream Shop Sales</title>
+
+    <style>
+
+        body{
+            background-color: #fff8e7;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .box{
+            
+            margin: auto;
+            margin-top: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid orange;
+        }
+
+        h1{
+            color: darkorange;
+        }
+
+        button{
+            background-color: rgb(0, 191, 255);
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #result{
+            margin-top: 20px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>🍦 Ice Cream Shop Sales</h1>
+
+    <p>
+       
+    </p>
+
+    <button onclick="festivalOffer()">
+        Festival Offer
+    </button>
+
+    <button onclick="ascending()">
+        Least Popular Flavors
+    </button>
+
+    <button onclick="descending()">
+        Most Popular Flavors
+    </button>
+
+    <button onclick="salesAnalysis()">
+        Sales Analysis
+    </button>
+
+    <p id="result">
+
+        Vanilla = 45<br>
+        Chocolate = 28<br>
+        Strawberry = 60<br>
+        Mango = 35
+
+    </p>
+
+</div>
+
+<script>
+
+var sales = [45, 28, 60, 35];
+
+function bonus(num){
+
+    return num * 10;
+
+}
+
+function festivalOffer(){
+
+    var newSales = sales.map(bonus);
+
+    document.getElementById("result").innerHTML =
+
+    "Vanilla = " + newSales[0] + "<br>" +
+    "Chocolate = " + newSales[1] + "<br>" +
+    "Strawberry = " + newSales[2] + "<br>" +
+    "Mango = " + newSales[3];
+
+}
+
+function ascending(){
+
+    var sortedSales = [45, 28, 60, 35];
+
+    sortedSales.sort(function(a,b){
+
+        return a - b;
+
+    });
+
+    document.getElementById("result").innerHTML =
+
+    "Sales (Lowest to Highest)<br><br>" +
+
+    sortedSales[0] + "<br>" +
+    sortedSales[1] + "<br>" +
+    sortedSales[2] + "<br>" +
+    sortedSales[3];
+
+}
+
+function descending(){
+
+    var sortedSales = [45, 28, 60, 35];
+
+    sortedSales.sort(function(a,b){
+
+        return b - a;
+
+    });
+
+    document.getElementById("result").innerHTML =
+
+    "Sales (Highest to Lowest)<br><br>" +
+
+    sortedSales[0] + "<br>" +
+    sortedSales[1] + "<br>" +
+    sortedSales[2] + "<br>" +
+    sortedSales[3];
+
+}
+
+function salesAnalysis(){
+
+    var a =
+    "Vanilla + Chocolate Sales = " +
+    eval("45 + 28") +
+    "<br>";
+
+    var b =
+    "Strawberry - Mango Sales = " +
+    eval("60 - 35") +
+    "<br>";
+
+    var c =
+    "Double Strawberry Sales = " +
+    eval("60 * 2");
+
+    document.getElementById("result").innerHTML =
+    a + b + c;
+
+}
+
+</script>
+
+</body>
+
+</html>
