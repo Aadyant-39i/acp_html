@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dragon Egg Counter</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            text-align: center;
+            background-color: lavender;
+        }
+
+        .box{
+            width: 500px;
+            margin: auto;
+            margin-top: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid purple;
+        }
+
+        button{
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 10px;
+            background-color: purple;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>🐲 Dragon Egg Counter</h1>
+
+    <p>
+
+        Fire Dragon Eggs = 25
+        <br>
+
+        Ice Dragon Eggs = 40
+
+    </p>
+
+    <button onclick="countEggs()">
+        Count Eggs
+    </button>
+
+    <button onclick="eggCode()">
+        Egg Code
+    </button>
+
+    <button onclick="dragonError()">
+        Dragon Test
+    </button>
+
+    <p id="result"></p>
+
+</div>
+
+<script>
+
+const add = (a,b) => a + b;
+
+function countEggs(){
+
+    var x = 25;
+    var y = 40;
+
+    document.getElementById("result").innerHTML =
+
+    "Total Dragon Eggs = " + add(x,y);
+
+}
+
+function eggCode(){
+
+    var x = 25;
+    var y = 40;
+
+    document.getElementById("result").innerHTML =
+
+    "Dragon Egg Code = " + String(x) + String(y) +
+
+    "<br><br>" +
+
+    "Total Eggs = " + (x+y);
+
+}
+
+function dragonError(){
+
+    try{
+
+        hatchDragon();
+
+    }
+
+    catch(err){
+
+        document.getElementById("result").innerHTML =
+
+        "Error: " + err.message;
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
