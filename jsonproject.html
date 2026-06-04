@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Mission Control Center</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Segoe UI;
+            background:#0d1117;
+            color:white;
+        }
+
+        .container{
+            
+            margin:auto;
+            margin-top:40px;
+        }
+
+        .card{
+            background:#161b22;
+            border:1px solid #30363d;
+            border-radius:12px;
+            padding:15px;
+            margin-bottom:15px;
+        }
+
+        h1{
+            color:#58a6ff;
+            text-align:center;
+        }
+
+        button{
+            background:#238636;
+            color:white;
+            border:none;
+            padding:12px 20px;
+            border-radius:8px;
+            cursor:pointer;
+            margin:5px;
+        }
+
+        button:hover{
+            background:#2ea043;
+        }
+
+        .buttons{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .label{
+            color:#8b949e;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚀 Mission Control Center</h1>
+
+    <div class="buttons">
+
+        <button onclick="saveMission()">
+            Save Mission
+        </button>
+
+        <button onclick="launchMission()">
+            Launch Mission
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <div class="label">
+            JSON DATA
+        </div>
+
+        <p id="json-text">
+            Waiting...
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="label">
+            MISSION
+        </div>
+
+        <p>
+            Mission:
+            <span id="loaded-mission"></span>
+        </p>
+
+        <p>
+            Destination:
+            <span id="loaded-destination"></span>
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="label">
+            STATUS
+        </div>
+
+        <p id="status">
+            Ready
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="label">
+            RESULT
+        </div>
+
+        <p id="result">
+            Waiting...
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+let mission = {
+
+    name : "Artemis X",
+    destination : "Moon",
+    crew : 4
+
+};
+
+function saveMission(){
+
+    let jsonText = JSON.stringify(mission);
+
+    let loadedMission = JSON.parse(jsonText);
+
+    document.getElementById("json-text").innerHTML =
+    jsonText;
+
+    document.getElementById("loaded-mission").innerHTML =
+    loadedMission.name;
+
+    document.getElementById("loaded-destination").innerHTML =
+    loadedMission.destination;
+
+}
+
+function delay(ms){
+
+    return new Promise(function(resolve){
+
+        setTimeout(resolve, ms);
+
+    });
+
+}
+
+async function launchMission(){
+
+    document.getElementById("result").innerHTML =
+    "";
+
+    document.getElementById("status").innerHTML =
+    "Systems Check...";
+
+    setTimeout(function(){
+
+        document.getElementById("status").innerHTML =
+        "Fueling Rocket...";
+
+    },1000);
+
+    await delay(3000);
+
+    document.getElementById("status").innerHTML =
+    "Countdown Started...";
+
+    await delay(2000);
+
+    document.getElementById("status").innerHTML =
+    "Rocket Launched!";
+
+    await delay(2000);
+
+    document.getElementById("result").innerHTML =
+    "Mission Successfully Started 🚀";
+
+}
+
+</script>
+
+</body>
+
+</html>
