@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Registration Portal</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container{
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            border: 3px solid teal;
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        h1{
+            text-align: center;
+            color: teal;
+        }
+
+        h2{
+            color: teal;
+            border-bottom: 2px solid #cceeee;
+            padding-bottom: 5px;
+        }
+
+        .row{
+            display: flex;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .field{
+            flex: 1;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select{
+            width: 100%;
+            padding: 10px;
+            border: 2px solid teal;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button{
+            background-color: teal;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover{
+            background-color: #008080;
+        }
+
+        .center{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #result{
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Registration Portal</h1>
+
+    <h2>Personal Information</h2>
+
+    <div class="row">
+
+        <div class="field">
+            <label>Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name">
+        </div>
+
+        <div class="field">
+            <label>Age</label>
+            <input type="number" id="age" placeholder="Enter your age">
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="field">
+            <label>Gender</label>
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Date of Birth</label>
+            <input type="date" id="dob">
+        </div>
+
+    </div>
+
+    <h2>Contact Information</h2>
+
+    <div class="row">
+
+        <div class="field">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="field">
+            <label>Phone Number</label>
+            <input type="number" id="phone" placeholder="Enter your phone number">
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="field">
+            <label>City</label>
+            <input type="text" id="city" placeholder="Enter your city">
+        </div>
+
+        <div class="field">
+            <label>Country</label>
+            <input type="text" id="country" placeholder="Enter your country">
+        </div>
+
+    </div>
+
+    <h2>School Information</h2>
+
+    <div class="row">
+
+        <div class="field">
+            <label>School Name</label>
+            <input type="text" id="school" placeholder="Enter your school name">
+        </div>
+
+        <div class="field">
+            <label>Board</label>
+            <select id="board">
+                <option value="">Select Board</option>
+                <option>CBSE</option>
+                <option>ICSE</option>
+                <option>Cambridge</option>
+                <option>IB</option>
+                <option>State Board</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="field">
+            <label>Grade</label>
+            <select id="grade">
+                <option value="">Select Grade</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Favorite Subject</label>
+            <input type="text" id="subject" placeholder="Enter your favorite subject">
+        </div>
+
+    </div>
+
+    <h2>Other Information</h2>
+
+    <div class="row">
+
+        <div class="field">
+            <label>Hobby</label>
+            <input type="text" id="hobby" placeholder="Enter your hobby">
+        </div>
+
+        <div class="field">
+            <label>Dream Career</label>
+            <input type="text" id="career" placeholder="Enter your dream career">
+        </div>
+
+    </div>
+
+    <div class="center">
+        <button onclick="checkForm()">Submit Registration</button>
+    </div>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function checkForm(){
+
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+    var gender = document.getElementById("gender").value;
+    var dob = document.getElementById("dob").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var city = document.getElementById("city").value;
+    var country = document.getElementById("country").value;
+    var school = document.getElementById("school").value;
+    var board = document.getElementById("board").value;
+    var grade = document.getElementById("grade").value;
+    var subject = document.getElementById("subject").value;
+    var hobby = document.getElementById("hobby").value;
+    var career = document.getElementById("career").value;
+
+    var message = "";
+
+    if(name == ""){
+        message += "• Name is required.<br>";
+    }
+
+    if(name != "" && name.length < 3){
+        message += "• Name must be at least 3 characters.<br>";
+    }
+
+    if(name != "" && !isNaN(name)){
+        message += "• Name cannot contain only numbers.<br>";
+    }
+
+    if(age == ""){
+        message += "• Age is required.<br>";
+    }
+
+    if(age != "" && age < 5){
+        message += "• Age must be at least 5.<br>";
+    }
+
+    if(age != "" && age > 25){
+        message += "• Age must be below 25.<br>";
+    }
+
+    if(gender == ""){
+        message += "• Please select a gender.<br>";
+    }
+
+    if(dob == ""){
+        message += "• Date of birth is required.<br>";
+    }
+
+    if(email == ""){
+        message += "• Email is required.<br>";
+    }
+
+    if(email != "" && email.indexOf("@") == -1){
+        message += "• Email must contain @.<br>";
+    }
+
+    if(email != "" && email.indexOf(".") == -1){
+        message += "• Email must contain a dot (.).<br>";
+    }
+
+    if(phone == ""){
+        message += "• Phone number is required.<br>";
+    }
+
+    if(phone != "" && phone.length != 10){
+        message += "• Phone number must contain exactly 10 digits.<br>";
+    }
+
+    if(city == ""){
+        message += "• City is required.<br>";
+    }
+
+    if(country == ""){
+        message += "• Country is required.<br>";
+    }
+
+    if(school == ""){
+        message += "• School name is required.<br>";
+    }
+
+    if(school != "" && school.length < 3){
+        message += "• School name must be at least 3 characters.<br>";
+    }
+
+    if(board == ""){
+        message += "• Please select a board.<br>";
+    }
+
+    if(grade == ""){
+        message += "• Please select a grade.<br>";
+    }
+
+    if(subject == ""){
+        message += "• Favorite subject is required.<br>";
+    }
+
+    if(subject != "" && subject.length < 3){
+        message += "• Subject name is too short.<br>";
+    }
+
+    if(hobby == ""){
+        message += "• Hobby is required.<br>";
+    }
+
+    if(hobby != "" && hobby.length < 3){
+        message += "• Hobby must be at least 3 characters.<br>";
+    }
+
+    if(career == ""){
+        message += "• Dream career is required.<br>";
+    }
+
+    if(career != "" && career.length < 3){
+        message += "• Dream career must be at least 3 characters.<br>";
+    }
+
+    if(message == ""){
+
+        document.getElementById("result").innerHTML =
+        "Registration Successful.";
+
+        document.getElementById("result").style.backgroundColor =
+        "#d4edda";
+
+        document.getElementById("result").style.color =
+        "green";
+
+    }
+
+    else{
+
+        document.getElementById("result").innerHTML =
+        message;
+
+        document.getElementById("result").style.backgroundColor =
+        "#f8d7da";
+
+        document.getElementById("result").style.color =
+        "red";
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
